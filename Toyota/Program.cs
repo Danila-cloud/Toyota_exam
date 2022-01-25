@@ -1,6 +1,7 @@
 ﻿using NLog;
 using NLog.Config;
 using System;
+using Toyota.Entity;
 
 namespace Toyota
 {
@@ -11,6 +12,9 @@ namespace Toyota
         {
             LogManager.Configuration = new XmlLoggingConfiguration("nLogConfig.xml");
 
+            App app = new App();
+
+            app.SerialXML();
 
             Console.ReadKey();
         }
