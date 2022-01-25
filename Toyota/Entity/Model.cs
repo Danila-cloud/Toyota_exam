@@ -7,7 +7,7 @@ namespace Toyota.Entity
     class Model
     {
 
-        public Guid Id { get; set; }
+        public Guid Id { get; set; }  //create new guid for entity "Model"
         public String Name { get; set; }
         public String SecondId { get; set; }
 
@@ -25,6 +25,10 @@ namespace Toyota.Entity
             this.SecondId = Sid;
         }
 
+        public void ChangeSid(String newSid)    // Change change SecondId for "Model"
+        {
+            this.SecondId = newSid;
+        }
         public bool AddModification(Modification m)
         {
             if (Modifications == null)
@@ -44,10 +48,6 @@ namespace Toyota.Entity
             this.Name = newName; 
         }
 
-        public void ChangeSid(String newSid)
-        {
-            this.SecondId = newSid;
-        }
 
         public String Show()
         {

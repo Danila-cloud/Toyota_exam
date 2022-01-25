@@ -15,14 +15,16 @@ namespace Toyota.Entity
 
         public App()
         {
-            Models = new List<Model>();
-            Colours = new List<Colour>();
+            Models = new List<Model>();  // List of entity "Model"
+            Colours = new List<Colour>();  // List of entity "Colour"
+
+            AddModel();
         }
 
         public List<Model> SearchByColor(String colour)
         {
             return Models.Where(model => model.Modifications.Exists(n => n.Colours.Exists(c => c.Name.Contains(colour)))).ToList();
-        }
+        }  // This method give opportunity search model by colour
 
         public void AddModification(Model model)
         {
@@ -40,7 +42,7 @@ namespace Toyota.Entity
 
             String guid = mod.Id.ToString();
             Logining(" Modification was added!");
-        }
+        }  
 
         public void EditModel()
         {
@@ -321,7 +323,7 @@ namespace Toyota.Entity
         {
             try
             {
-                StreamWriter stream_writer = new StreamWriter("C:\\Users\\danil\\source\repos\\Danila-cloud\\Exam-C-\\StepExamCarCharacters\\StepExamCarCharacters\\loging.txt");
+                StreamWriter stream_writer = new StreamWriter("loging.txt");
 
                 stream_writer.WriteLine(line);
 
@@ -331,16 +333,7 @@ namespace Toyota.Entity
             {
                 Console.WriteLine("Exception: " + e.Message);
             }
-        }
-
-        public void SerialXML()
-        {
-            XmlSerializer xml = new XmlSerializer(typeof(List<Model>));
-            using (FileStream fs = new FileStream("Models.xml", FileMode.OpenOrCreate))
-            {
-                xml.Serialize(fs, Models);
-            }
-        }
+        }  // Loggin in file
 
     }
 }

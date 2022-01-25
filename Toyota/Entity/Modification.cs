@@ -15,14 +15,30 @@ namespace Toyota.Entity
 
         public Modification()
         {
-            this.Id = Guid.NewGuid();
+            this.Id = Guid.NewGuid();  //create new guid for entity "Modification"
         }
 
         public Modification(String name, String Sid)
         {
-            this.Id = Guid.NewGuid();
+            this.Id = Guid.NewGuid();  //create new guid for entity "Modification"
             this.Name = name;
             this.SecondId = Sid;
+        }
+
+
+        public void ChangeSid(String newSid)    // Change change SecondId for "Modification"
+        {
+            this.SecondId = newSid;
+        }
+
+        public String Show()
+        {
+            return this.Name.PadRight(15) + this.SecondId;
+        }
+
+        public override string ToString()
+        {
+            return this.Name;
         }
 
         public bool AddColor(Colour c)
@@ -43,21 +59,5 @@ namespace Toyota.Entity
         {
             this.Name = newName;
         }
-
-        public void ChangeSid(String newSid)
-        {
-            this.SecondId = newSid;
-        }
-
-        public String Show()
-        {
-            return this.Name.PadRight(15) + this.SecondId;
-        }
-
-        public override string ToString()
-        {
-            return this.Name;
-        }
-
     }
 }
