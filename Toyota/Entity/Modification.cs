@@ -11,7 +11,7 @@ namespace Toyota.Entity
         public String Name { get; set; }
         public String SecondId { get; set; }
 
-        public List<Colour> Colors { get; set; }
+        public List<Colour> Colours { get; set; }
 
         public Modification()
         {
@@ -27,15 +27,15 @@ namespace Toyota.Entity
 
         public bool AddColor(Colour c)
         {
-            if (Colors == null)
+            if (Colours == null)
             {
-                Colors = new List<Colour>();
-                Colors.Add(c);
+                Colours = new List<Colour>();
+                Colours.Add(c);
 
                 return true;
             }
 
-            Colors.Add(c);
+            Colours.Add(c);
             return true;
         }
 

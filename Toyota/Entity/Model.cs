@@ -51,7 +51,7 @@ namespace Toyota.Entity
 
         public String Show()
         {
-            return this.Name.PadRight(15) + this.SecondId;
+            return this.Name + this.SecondId;
         }
 
         public override string ToString()
@@ -61,4 +61,4 @@ namespace Toyota.Entity
     }
 
 }
-}
+
